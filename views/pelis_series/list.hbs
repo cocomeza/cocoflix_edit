@@ -1,0 +1,27 @@
+<h1>Películas y Series</h1>
+<a href="/pelis_series/agregar">Agregar Nueva</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Género</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each pelisSeries}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.titulo}}</td>
+            <td>{{this.genero}}</td>
+            <td>
+                <a href="/pelis_series/editar/{{this.id}}">Editar</a>
+                <form method="POST" action="/pelis_series/borrar/{{this.id}}" style="display:inline;">
+                    <button type="submit">Borrar</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

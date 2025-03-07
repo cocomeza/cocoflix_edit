@@ -1,0 +1,8 @@
+<h1>Editar Película o Serie</h1>
+<form method="POST" action="/pelis_series/editar/{{peliSerie.id}}">
+    <label for="titulo">Título:</label>
+    <input type="text" name="titulo" value="{{peliSerie.titulo}}" required>
+    <label for="genero">Género:</label>
+    <input type="text" name="genero" value="{{peliSerie.genero}}" required>
+    <button type="submit">Actualizar</button>
+</form>

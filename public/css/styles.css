@@ -15,33 +15,69 @@ body {
 
 /* Navegación */
 nav {
-    background-color: #181818; /* Fondo oscuro para el menú */
-    padding: 15px 30px;
+    background-color: #181818;
+    padding: 15px 20px;
     display: flex;
-    justify-content: flex-end; /* Alinea el menú hacia la derecha */
+    justify-content: space-between; /* Espaciado entre logo y menú */
+    align-items: center;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px; /* Espaciado entre elementos */
+    gap: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    transition: 0.3s; /* Efecto suave */
     font-size: 1rem;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #e50914; /* Rojo al pasar el ratón */
+    color: #e50914;
+}
+
+/* Ajustes para navbar solo en celulares */
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* El menú se apila verticalmente */
+        align-items: center;
+        padding: 10px 15px; /* Ajusta el espacio del navbar */
+    }
+
+    nav ul {
+        flex-direction: column; /* Los elementos se alinean en columna */
+        gap: 15px; /* Espaciado entre los enlaces */
+        align-items: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        width: 100%; /* Los elementos ocupan todo el ancho */
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+        padding: 10px; /* Agrega más espacio clickeable */
+        display: block; /* Los enlaces ocupan todo el ancho del contenedor */
+        color: #fff;
+        border-radius: 5px; /* Bordes suaves */
+        transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+        background-color: #e50914; /* Fondo rojo al pasar el ratón */
+        color: #fff; /* Texto blanco sobre el fondo */
+    }
 }
 
 /* Contenedor principal */
 main.container {
     max-width: 1200px;
-    margin: 20px auto; /* Centrado automático */
+    margin: 20px auto;
     padding: 20px;
 }
 
@@ -51,7 +87,7 @@ main.container {
     padding: 50px 20px;
     background: linear-gradient(to right, #e50914, #b81d24);
     border-radius: 10px;
-    margin-bottom: 40px; /* Separar del contenido */
+    margin-bottom: 40px;
 }
 
 .hero h1 {
@@ -61,6 +97,16 @@ main.container {
 .hero p {
     font-size: 1.2rem;
     margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
 }
 
 /* Destacados */
@@ -80,6 +126,13 @@ main.container {
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Tarjetas */
@@ -105,6 +158,12 @@ main.container {
 .card h3 {
     padding: 15px;
     font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+    }
 }
 
 /* Formularios */
@@ -180,6 +239,18 @@ table tr:nth-child(even) {
     background-color: #222;
 }
 
+table th, table td {
+    font-size: 0.9rem;
+    padding: 8px;
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -202,37 +273,4 @@ footer {
 
 .social-icons a:hover {
     color: #fff;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    .grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    table th, table td {
-        font-size: 0.8rem;
-        padding: 8px;
-    }
 }

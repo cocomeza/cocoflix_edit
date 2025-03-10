@@ -156,7 +156,7 @@ main.container p {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 400px;
     border-bottom: 3px solid #e50914;
 }
 
